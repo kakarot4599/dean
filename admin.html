@@ -1,0 +1,110 @@
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+ 
+    <style>
+        body {
+            position: relative;
+            padding: 0;
+            margin: 0;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+
+        ul.nav-pills {
+            top: 20px;
+            position: fixed;
+        }
+    </style>
+</head>
+
+<body onload="getData()">
+
+    <body data-spy="scroll" data-target="#myScrollspy" data-offset="1">
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="col-sm-2 col-4 bg-dark" id="myScrollspy">
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link " href="0.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section2">Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#section3">Sản phẩm</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section4" onclick="display()">Khách Hàng</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="col-sm-10 col-8">
+                    <div id="section3" class="table-them"  style="padding-top: 50px; height: 700px">
+                        <div class="col-6">
+                            <form action="/action_page.php">
+                                <div class="form-group">
+                                    <label for="Model">Model:</label>
+                                    <input type="text" class="form-control" id="model" placeholder="Enter Model"
+                                        name="Model" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="img">Ảnh:</label>
+                                    <input type="img" class="form-control" id="img" placeholder="Enter img" name="img">
+                                </div>
+                                <div class="form-group">
+                                    <label for="price">Giá tiền:</label>
+                                    <input type="price" class="form-control" id="price" placeholder="Enter price"
+                                        name="price" required>
+                                </div>
+                                <button type="button" class="btn btn-primary" id="submit" onclick="add()" >Thêm</button>
+                                <button type="button" class="btn btn-primary" id="update"  >Cập nhật</button>
+                            </form>
+                        </div>
+                        <div class="table">
+                            <table class="table table-bordered" id="table-1">
+                                <thead>
+                                    <tr>
+                                        <th>Model</th>
+                                        <th>Ảnh</th>
+                                        <th>Giá tiền</th>
+                                        <th>Chức Năng</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="section4" class="" style="padding-top: 50px; height: 700px">
+                        <h3>Danh sách đặt hàng</h3>
+                        <div class="table">
+                            <table class="table table-bordered" id="table">
+                                <thead>
+                                    <tr>
+                                        <th>Họ Tên</th>
+                                        <th>Số điện thoại</th>
+                                        <th>Email</th>
+                                        <th>Model</th>
+                                        <th>Color</th>
+                                        <th>Địa chỉ</th>
+                                        <th>Số lượng</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</body>
+<script src="./sanpham-admin.js"></script>
+<script src="khachhang-admin.js"></script>
+
